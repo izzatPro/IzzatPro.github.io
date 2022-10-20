@@ -59,4 +59,22 @@ window.addEventListener('load',function(){
     
     });
 
+
+    // Main button
+    const mainBtn = document.querySelector('.main-btn');
+    let ripple;
+    mainBtn.addEventListener('mouseenter', function(e){
+        const left = e.clientX - e.target.getBoundingClientRect().left;
+        const top = e.clientY - e.target.getBoundingClientRect().top;
+
+        ripple  = document.createElement('div');
+        ripple.classList.add('ripple');
+        ripple.style.left = `${left}px`;
+        ripple.style.top = `${top}px`;
+        mainBtn.prepend(ripple);
+    });
+    mainBtn.addEventListener('mouseleave', function(){
+        mainBtn.removeChild(ripple);
+    });
+    // End of Main Button
 });
