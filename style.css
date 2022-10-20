@@ -128,6 +128,11 @@ animation: mouseCircleAnim 10s infinite linear;
     align-self: center;
     justify-self: center;
     opacity: 0.5;
+    position: relative;
+    transition: left 2s, top 2s;
+    top: 0;
+    left: 0;
+    /* z-index: 2; */
 }
 .circle-1{
     background: url(images/landing/circle-1-img.jpg) center no-repeat;
@@ -162,7 +167,11 @@ animation: mouseCircleAnim 10s infinite linear;
 
 }
 .main-circle img{
-    mix-blend-mode:color-dodge;
+    /* mix-blend-mode: color-dodge; */
+    position: absolute;
+    top: -330px;
+    left: -240px;
+    transition: left 2s, top 2s;
 }
 /* End of the Animated Circles */
 /* Featured text */
