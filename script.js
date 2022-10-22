@@ -61,20 +61,39 @@ window.addEventListener('load',function(){
 
 
     // Main button
-    const mainBtn = document.querySelector('.main-btn');
-    let ripple;
-    mainBtn.addEventListener('mouseenter', function(e){
-        const left = e.clientX - e.target.getBoundingClientRect().left;
-        const top = e.clientY - e.target.getBoundingClientRect().top;
+    const mainBtn = document.querySelectorAll('.main-btn');
+    mainBtn.forEach((btn) =>{
+        let ripple;
+        btn.addEventListener('mouseenter', function(e){
+            const left = e.clientX - e.target.getBoundingClientRect().left;
+            const top = e.clientY - e.target.getBoundingClientRect().top;
+    
+            ripple  = document.createElement('div');
+            ripple.classList.add('ripple');
+            ripple.style.left = `${left}px`;
+            ripple.style.top = `${top}px`;
+            btn.prepend(ripple);
+        });
+        btn.addEventListener('mouseleave', function(){
+            btn.removeChild(ripple);
+        });
+    });
 
-        ripple  = document.createElement('div');
-        ripple.classList.add('ripple');
-        ripple.style.left = `${left}px`;
-        ripple.style.top = `${top}px`;
-        mainBtn.prepend(ripple);
-    });
-    mainBtn.addEventListener('mouseleave', function(){
-        mainBtn.removeChild(ripple);
-    });
     // End of Main Button
+
+
+    // About me Text
+    const aboutMeText = document.querySelector('.about-me-text');
+    const aboutMeTextContent = 'I am an inspired Juniour Frontend Developer with the best user experience & I do not talk much, just contact me :)';
+    Array.from(aboutMeTextContent).forEach((char)=>{
+        const span = document.createElement('span');
+        span.textContent = char;
+        aboutMeText.appendChild(span);
+        span.addEventListener('mouseenter', function(e){
+            e.target.style.animation = "aboutMeTextAnim 10s infinite";
+        });
+    });
+
+
+    // End of About Me Text
 });
