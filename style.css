@@ -476,6 +476,25 @@ animation: mouseCircleAnim 10s infinite linear;
     transform: scale(0);
     visibility: hidden;
 }
+.demo{
+    position: fixed;
+    top: 10rem;
+    right: 5rem;
+    background: transparent;
+    border: none;
+    color: white;
+    font-size: 2rem;
+    letter-spacing: .1rem;
+    cursor: pointer;
+    z-index: 10;
+    transform: scale(0);
+    visibility: hidden;
+}
+.change.demo{
+    transform: scale(1);
+    visibility: visible;
+    transition: transform .5s;
+}
 .change.project-hide-btn{
     transform: scale(1);
     visibility: visible;

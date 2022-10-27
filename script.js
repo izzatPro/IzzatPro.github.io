@@ -99,6 +99,7 @@ window.addEventListener('load',function(){
     const container = document.querySelector('.container');
     const projects = document.querySelectorAll('.project');
     const projectHideBtn = document.querySelector('.project-hide-btn');
+    const demo = document.querySelector('.demo');
     projects.forEach((project)=>{
         project.addEventListener('mouseenter', () => {
             project.firstElementChild.style.top = `-${project.firstElementChild.offsetHeight - project.offsetHeight + 20}px`;
@@ -115,14 +116,33 @@ window.addEventListener('load',function(){
             const bigImg =  document.createElement("img");
             bigImg.className = "project-img";
             const imgPath = project.firstElementChild.getAttribute("src").split('.')[0];
+            demo.onclick = function(){
+                const demoDescr = project.firstElementChild.getAttribute("descr");
+                switch(demoDescr){
+                    case 'phone': demo.setAttribute("href", "#"); break;
+                    case 'consulting': demo.setAttribute("href", "#"); break;
+                    case 'cars': demo.setAttribute("href", "#"); break;
+                    case 'design': demo.setAttribute("href", "#"); break;
+                    case 'food': demo.setAttribute("href", "#"); break;
+                    case 'paypal': demo.setAttribute("href", "#"); break;
+                    case 'web': demo.setAttribute("href", "#"); break;
+                    case 'ballon': demo.setAttribute("href", "#"); break;
+                    case 'wine': demo.setAttribute("href", "#"); break;
+                    case 'house': demo.setAttribute("href", "#"); break;
+                }
+            };
+           
+            
             bigImg.setAttribute("src",`${imgPath}-big.jpg`);
             bigImgWrapper.appendChild(bigImg);
             document.body.style.overflowY = "hidden";
 
 
             projectHideBtn.classList.add("change");
+            demo.classList.add('change');
             projectHideBtn.onclick = () => { 
             projectHideBtn.classList.remove("change");
+            demo.classList.remove('change');
             bigImgWrapper.remove();
             document.body.style.overflowY = "scroll";
             } ;
