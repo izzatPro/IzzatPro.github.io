@@ -191,4 +191,29 @@ window.addEventListener('load',function(){
         showHideBool = !showHideBool;
     });
     // End of Projects Button
+    // End of Projects
+
+    // Section 4
+     document.querySelectorAll('.service-btn').forEach((service , i) =>{
+        service.addEventListener('click', (e) =>{
+            e.preventDefault();
+            const serviceText = service.nextElementSibling;
+            serviceText.classList.toggle('change');
+            const rightPosition = serviceText.classList.contains('change') ? `calc(100% - ${getComputedStyle(service.firstElementChild).width})` : 0 ;
+            service.firstElementChild.style.right = rightPosition;
+            console.log(serviceText.getAttribute('id'));
+            if (serviceText.classList.contains('change')){
+                switch (serviceText.getAttribute('id') ){
+                    case "first": serviceText.style.height = '39rem' ; break;
+                    case "second": serviceText.style.height = '32rem'; break;
+                }
+            } else {
+                switch (serviceText.getAttribute('id') ){
+                    case "first": serviceText.style.height = '0' ; break;
+                    case "second": serviceText.style.height = '0'; break;
+                }
+            }
+        });
+     });
+    // End of Section 4
 });
