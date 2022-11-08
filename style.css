@@ -12,6 +12,7 @@
 }
 html {
     font-size: 62.5%;
+    scroll-behavior: smooth;
 }
 .center{
     display: flex;
@@ -379,6 +380,7 @@ animation: mouseCircleAnim 10s infinite linear;
     border-radius: 0.5rem;
     cursor: pointer;
     perspective: 20rem;
+    transition: opacity 0.5s;
 }
 .project img{
     width: 90%;

@@ -155,6 +155,7 @@ window.addEventListener('load',function(){
     });
     // End of Projects
     // Projects Button
+    const section3 = document.querySelector('.section-3');
     const projectsBtn = document.querySelector('.projects-btn');
     const projectsBtnText = document.querySelector('.projects-btn span');
     let showHideBool = true ;
@@ -164,12 +165,25 @@ window.addEventListener('load',function(){
         projects.forEach((project, i) =>{
             if ( i >= 6) {
                 if(showHideBool){
-                    project.style.display = "flex";
-                    project.style.opacity = "1";
+                    setTimeout(() =>{
+                        project.style.display = "flex";
+                        section3.scrollIntoView({block: "end"});
+                    }, 600);
+                    setTimeout(()=>{
+                        project.style.opacity = "1";
+                        console.log(i*200);
+                    }, i * 200);
+ 
                     projectsBtnText.textContent = 'Show Less';
                 } else {
-                    project.style.display = "none";
+                    setTimeout(() =>{
+                        project.style.display = "none";
+                        section3.scrollIntoView({block: "start"});
+                    },1200);
+                   setTimeout(() =>{
                     project.style.opacity = "0";
+                   },i * 100);
+                    
                     projectsBtnText.textContent = 'Show More';
                 }
             }
