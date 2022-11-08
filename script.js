@@ -90,7 +90,7 @@ window.addEventListener('load',function(){
         span.textContent = char;
         aboutMeText.appendChild(span);
         span.addEventListener('mouseenter', function(e){
-            e.target.style.animation = "aboutMeTextAnim 10s infinite";
+            e.target.style.animation = "aboutMeTextAnim 10s 0s infinite";
         });
     });
     // End of About Me Text
@@ -100,7 +100,7 @@ window.addEventListener('load',function(){
     const projects = document.querySelectorAll('.project');
     const projectHideBtn = document.querySelector('.project-hide-btn');
     const demo = document.querySelector('.demo');
-    projects.forEach((project)=>{
+    projects.forEach((project, i)=>{
         project.addEventListener('mouseenter', () => {
             project.firstElementChild.style.top = `-${project.firstElementChild.offsetHeight - project.offsetHeight + 20}px`;
         });
@@ -148,7 +148,29 @@ window.addEventListener('load',function(){
             } ;
         });
         //End of //Big Project
+
+        
+        i >=6 && (project.style.cssText = "display:none; opacity: 0 " ) ;
+        
     });
-   
     // End of Projects
+    // Projects Button
+    const projectsBtn = document.querySelector('.projects-btn');
+    let showHideBool = true ;
+    projectsBtn.addEventListener('click', (e)=>{
+        e.preventDefault();
+        projects.forEach((project, i) =>{
+            if ( i >= 6) {
+                if(showHideBool){
+                    project.style.display = "flex";
+                    project.style.opacity = "1";
+                } else {
+                    project.style.display = "none";
+                    project.style.opacity = "0";
+                }
+            }
+        });
+        showHideBool = !showHideBool;
+    });
+    // End of Projects Button
 });

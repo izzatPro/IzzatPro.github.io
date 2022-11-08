@@ -312,16 +312,17 @@ animation: mouseCircleAnim 10s infinite linear;
 /* About me Text */
 .about-me-text{
     width: 80%;
-    margin: auto;
-}
+    margin: 0 auto;
+    text-align: center;
+} 
 .about-me-text span{
     font-family: 'Poppins', sans-serif;
     font-size: 13rem;
     font-family: bold;
-    color: #aaa;
+    color: rgb(223, 234, 4);
     letter-spacing: .5rem;
     line-height: .9;
-    text-shadow: 0 0 1rem #9b0e0e;
+    text-shadow: 0 0 1rem #c47878;
     mix-blend-mode: color-dodge;
 }
 @keyframes aboutMeTextAnim {
@@ -384,7 +385,7 @@ animation: mouseCircleAnim 10s infinite linear;
     object-fit: cover;
     position: absolute;
     top: 2rem;
-    transition: top 4s 0.2s, opacity;
+    transition: top 4s 0.2s, opacity 0.2s;
     opacity: 0.5;
 }
 .project:nth-child(odd):hover img{
@@ -503,4 +504,13 @@ animation: mouseCircleAnim 10s infinite linear;
 /* End of Project Hide Button */
 
 /* End of Projects */
+/* Projects Button */
+.projects-btn{
+    left: 50%;
+    transform: translateX(-50%);
+}
+/* End of Projects Button */
+
+
+
 /* End of Section 3 */
