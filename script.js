@@ -156,17 +156,21 @@ window.addEventListener('load',function(){
     // End of Projects
     // Projects Button
     const projectsBtn = document.querySelector('.projects-btn');
+    const projectsBtnText = document.querySelector('.projects-btn span');
     let showHideBool = true ;
     projectsBtn.addEventListener('click', (e)=>{
         e.preventDefault();
+        projectsBtn.firstElementChild.nextElementSibling.classList.toggle("change");
         projects.forEach((project, i) =>{
             if ( i >= 6) {
                 if(showHideBool){
                     project.style.display = "flex";
                     project.style.opacity = "1";
+                    projectsBtnText.textContent = 'Show Less';
                 } else {
                     project.style.display = "none";
                     project.style.opacity = "0";
+                    projectsBtnText.textContent = 'Show More';
                 }
             }
         });
