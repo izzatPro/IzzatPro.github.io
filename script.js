@@ -185,7 +185,7 @@ window.addEventListener('load',function(){
         e.preventDefault();
         projectsBtn.firstElementChild.nextElementSibling.classList.toggle("change");
         showHideBool ? ( projectsBtnText.textContent = 'Show Less') : (  projectsBtnText.textContent = 'Show More');
-        projects.forEach((project, i) =>{
+        projects.forEach((project, i) => {
              i >= 6 && ( showHideBool ? showProjects(project, i): hideProjects(project, i));
             });
         showHideBool = !showHideBool;
@@ -253,10 +253,9 @@ window.addEventListener('load',function(){
         setTimeout(()=>{
             slideshow.removeChild(firstIcon);
             slideshow.appendChild(firstIcon);
-            setTimeout(() =>{
+        setTimeout(() =>{
                 firstIcon.classList.remove('faded-out');
-            }, 500);
-         
+            }, 500); 
         }, 500);
       
 
