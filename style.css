@@ -589,6 +589,7 @@ animation: mouseCircleAnim 10s infinite linear;
 .section-5 {
     position: relative;
     height: 100vh;
+    flex-direction: column;
 }
 /* Form */
 .form-heading{
@@ -638,4 +639,19 @@ textarea::placeholder {
     color: #fff;
 }
 /* End of Form */
+/* Slideshow */
+.slideshow{
+    display: flex;
+    width: 50rem;
+    margin-top: 10rem;
+    padding: 0 2rem;
+}
+.slideshow-link{
+    width: 20%;
+}
+.slideshow-link img{
+    width: 100%;
+    padding: 0 1rem;
+}
+/* End of Slideshow */
 /* End of Section 5 */
