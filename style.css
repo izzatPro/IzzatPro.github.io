@@ -186,8 +186,9 @@ animation: mouseCircleAnim 10s infinite linear;
     position: fixed;
     width: 100%;
     height: 100vh;
-    background: linear-gradient(rgba(0,0,0,.7),rgba(0,0,0,.7)), url(images/bg.jpg) center no-repeat ;
+    /* background: linear-gradient(rgba(0,0,0,.7),rgba(0,0,0,.7)), url(images/bg.jpg) center no-repeat ; */
     /* background: linear-gradient(rgba(0, 0, 0, .1),rgba(0,0,0,.9)), url(https://cdn2.vectorstock.com/i/1000x1000/73/51/creative-background-vector-787351.jpg) center no-repeat ; */
+    background: linear-gradient(rgba(0, 0, 0, .1),rgba(0,0,0,.9)), url(https://media.istockphoto.com/id/1294521676/photo/programming-code-abstract-technology-background-of-software-developer-and-computer-script.jpg?b=1&s=170667a&w=0&k=20&c=ehWomY1hSv3JUibQuEJ4xgs98-aK6EZPh4Rb_IyGzjg=) center no-repeat ;
     background-size: cover;
 }
 /* End page BG */
@@ -584,3 +585,47 @@ animation: mouseCircleAnim 10s infinite linear;
 }
 /* End of Services */
 /* End of Section 4 */
+/* Section 5 */
+.section-5 {
+    position: relative;
+    height: 100vh;
+}
+/* Form */
+.form-heading{
+    font-family: "Poppins", sans-serif;
+    font-size: 6rem;
+    font-weight: 400;
+    color: #9b0e0e;
+    letter-spacing: .3rem;
+    margin-bottom: 3rem;
+}
+.contact-form {
+    flex-direction: column;
+}
+.contact-form-input {
+    width: 60rem;
+    padding: .5rem;
+    margin: 1rem 0;
+    background: rgba(255,255,255,.1);
+    border: 0.1rem solid #9b0e0e;
+    font-size: 1.7rem;
+    font-weight: bold;
+    color: #aaa;
+    letter-spacing: .1rem;
+    height: 5rem;
+}
+.contact-form-textarea{
+    height: 20rem;
+    resize: none;
+}
+.form-submit-btn{
+    width: 20rem;
+    height: 5rem;
+    background: #9b0e0e;
+    border:none;
+    align-self: flex-start;
+    font-size: 1.8rem;
+    color: #fff;
+}
+/* End of Form */
+/* End of Section 5 */
