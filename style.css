@@ -546,7 +546,7 @@ animation: mouseCircleAnim 10s infinite linear;
 .service{
     width: 70%;
     margin: 2rem 0;
-    border-bottom: .5rem solid #9b0e0e;
+    border-bottom: .5rem solid #fff;
 }
 .service-btn {
     width: 100%;
@@ -559,7 +559,7 @@ animation: mouseCircleAnim 10s infinite linear;
     font-size: 10rem;
     font-style: italic;
     font-weight: bold;
-    color:#9b0e0e;
+    color:#fff;
     position: absolute;
     right: 0;
     transition: right .5s;
@@ -648,10 +648,26 @@ textarea::placeholder {
 }
 .slideshow-link{
     width: 20%;
+    filter: brightness(.5);
+    transition: filter 1.5s;
+}
+.slideshow-link:nth-child(1),
+.slideshow-link:nth-child(5){
+transition: width 0.5s , opacity 0.5s;
+}
+.slideshow-link:nth-child(3){
+    transition: filter .5s;
 }
 .slideshow-link img{
     width: 100%;
     padding: 0 1rem;
+}
+.faded-out {
+    opacity: 0;
+    width: 0;
+}
+.light {
+    filter: brightness(1.5);
 }
 /* End of Slideshow */
 /* End of Section 5 */
