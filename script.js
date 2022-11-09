@@ -216,4 +216,30 @@ window.addEventListener('load',function(){
         });
      });
     // End of Section 4
+    // Section 5
+    //  Form
+    const formHeading = document.querySelector('.form-heading');
+    const formInputs = document.querySelectorAll('.contact-form-input');
+    formInputs.forEach((input) => {
+        input.addEventListener('focus', () => {
+            formHeading.style.opacity = `0`;
+            this.setTimeout(() =>{
+                formHeading.textContent = `Your ${input.placeholder}`;
+                formHeading.style.opacity = 1 ;
+            }, 300);
+       
+        });
+    });
+    formInputs.forEach((input) => {
+        input.addEventListener('blur', () => {
+            formHeading.style.opacity = `0`;
+            this.setTimeout(() =>{
+                formHeading.textContent = `Let's Talk`;
+                formHeading.style.opacity = 1 ;
+            }, 300);
+       
+        });
+    });
+    // End of Form
+    // End of Section 5
 });

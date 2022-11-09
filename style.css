@@ -566,7 +566,7 @@ animation: mouseCircleAnim 10s infinite linear;
 }
 .service-text {
     font-size: 5rem;
-    color: #777;
+    color: white;
     letter-spacing: .1rem;
     height: 0;
     visibility: hidden;
@@ -595,9 +595,10 @@ animation: mouseCircleAnim 10s infinite linear;
     font-family: "Poppins", sans-serif;
     font-size: 6rem;
     font-weight: 400;
-    color: #9b0e0e;
+    color: #ea00ff;
     letter-spacing: .3rem;
     margin-bottom: 3rem;
+    transition: opacity 0.3s;
 }
 .contact-form {
     flex-direction: column;
@@ -606,13 +607,22 @@ animation: mouseCircleAnim 10s infinite linear;
     width: 60rem;
     padding: .5rem;
     margin: 1rem 0;
-    background: rgba(255,255,255,.1);
+    background: rgba(221, 0, 255, 0.1);
     border: 0.1rem solid #9b0e0e;
     font-size: 1.7rem;
     font-weight: bold;
-    color: #aaa;
+    color: #fff;
     letter-spacing: .1rem;
     height: 5rem;
+}
+input::placeholder {
+    color: white;
+}
+textarea::placeholder {
+    color: white;
+}
+.contact-form-input ::placeholder{
+    color:red !important;
 }
 .contact-form-textarea{
     height: 20rem;
