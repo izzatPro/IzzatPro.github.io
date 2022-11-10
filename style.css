@@ -10,6 +10,9 @@
     outline: none;
     font-family: 'Jura', sans-serif;
 }
+::-webkit-scrollbar-track {
+    background: #f1f1f1;
+}
 html {
     font-size: 62.5%;
     scroll-behavior: smooth;
@@ -204,6 +207,7 @@ animation: mouseCircleAnim 10s infinite linear;
     background: white;
     border-radius: 50% ;
     z-index: 200;
+    overflow: hidden;
 }
 .half-circle, .half-circle-top{
     position: absolute;
@@ -211,15 +215,20 @@ animation: mouseCircleAnim 10s infinite linear;
     height: 100%;
     top: 0;
     left: 0;
+    transform-origin: right center ;
 }
 .half-circle:nth-child(1){
-    background: green;
+    background: #b60000;
 }
-/* .half-circle:nth-child(2){
-    background: blue;
-} */
+.half-circle:nth-child(2){
+    background: #b60000;
+}
 .half-circle-top{
-    background: orange;
+    background: white;
+}
+/* .progress-bar:hover .half-circle-top{
+    opacity: 0;
+    transition: opacity 0s 1s;
 }
 .progress-bar:hover .half-circle:nth-child(1){
 transform: rotate(180deg);
@@ -228,7 +237,7 @@ transition: transform 1s linear;
 .progress-bar:hover .half-circle:nth-child(2){
 transform: rotate(360deg);
 transition: transform 2s linear;
-}
+} */
 
 
 .progress-bar-circle {
@@ -238,7 +247,7 @@ transition: transform 2s linear;
     border-radius: 50%;
     color: #fff;
     font-size: 4rem;
-    display: none;
+    z-index: 200;
 }
 /* End of Progress Bar  */
 

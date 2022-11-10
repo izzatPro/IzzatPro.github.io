@@ -80,7 +80,27 @@ window.addEventListener('load',function(){
     });
 
     // End of Main Button
-
+    // Progress Bar
+    const halfCircles = document.querySelectorAll('.half-circle'); 
+    const halfCircleTop = document.querySelector('.half-circle-top');
+    const progressBarCircle = document.querySelector('.progress-bar-circle');
+    const progressBarFn = () => {
+        const pageViewportHeight = window.innerHeight; //Сколько я вижу экрана
+        const pageHeight = this.document.documentElement.scrollHeight; //Высота всего сайта 
+        const scrolledPortion =this.window.pageYOffset;  //Сколько я пролистал сверху от сайта
+        const scrolledPortionDegree = (scrolledPortion / (pageHeight - pageViewportHeight) ) * 360;
+        console.log(scrolledPortionDegree);
+        halfCircles.forEach(el => {
+            el.style.transform = `rotate(${scrolledPortionDegree}deg)`;
+        });
+        if(scrolledPortionDegree >= 180){
+            halfCircles[0].style.transform = "rotate(180deg)";
+            halfCircleTop.style.opacity = "0";
+        } else {
+            halfCircleTop.style.opacity = "1";
+        }
+    };
+    // End of Progress Bar
     // Navigation
     const menuIcon = document.querySelector('.menu-icon');
     const navbar = document.querySelector('.navbar');
@@ -91,6 +111,7 @@ window.addEventListener('load',function(){
             menuIcon.classList.remove('show-menu-icon');
             navbar.classList.remove('hide-navbar');
         }
+        progressBarFn();
     });
     menuIcon.addEventListener('click', () =>{
         menuIcon.classList.remove('show-menu-icon');
