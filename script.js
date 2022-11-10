@@ -81,6 +81,22 @@ window.addEventListener('load',function(){
 
     // End of Main Button
 
+    // Navigation
+    const menuIcon = document.querySelector('.menu-icon');
+    const navbar = document.querySelector('.navbar');
+    document.addEventListener('scroll', () => {
+        menuIcon.classList.add('show-menu-icon');
+        navbar.classList.add('hide-navbar');
+        if (this.window.scrollY === 0){
+            menuIcon.classList.remove('show-menu-icon');
+            navbar.classList.remove('hide-navbar');
+        }
+    });
+    menuIcon.addEventListener('click', () =>{
+        menuIcon.classList.remove('show-menu-icon');
+        navbar.classList.remove('hide-navbar');
+    });
+    // End of Navigation
 
     // About me Text
     const aboutMeText = document.querySelector('.about-me-text');
