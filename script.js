@@ -86,9 +86,12 @@ window.addEventListener('load',function(){
     const halfCircles = document.querySelectorAll('.half-circle'); 
     const halfCircleTop = document.querySelector('.half-circle-top');
     const progressBarCircle = document.querySelector('.progress-bar-circle');
-    const progressBarFn = (bigImgWrapper = false ) => {
+    let scrolledPortion = 0;
+    let scrollBool = false ;
+    let imageWrapper = false ; 
+    const progressBarFn = (bigImgWrapper) => {
+        imageWrapper = bigImgWrapper ;
         let pageHeight = 0; 
-        let scrolledPortion = 0.
         const pageViewportHeight = window.innerHeight; //Сколько я вижу экрана
         if(!bigImgWrapper) {
             pageHeight = document.documentElement.scrollHeight; //Высота всего сайта 
@@ -111,20 +114,8 @@ window.addEventListener('load',function(){
             }
 
         });
-        const scrollBool = scrolledPortion + pageViewportHeight  +  100 > pageHeight;
-        //Progress Bar Click
-        progressBar.onclick = (e) => {
-        e.preventDefault();
-        if(!bigImgWrapper){
-            const sectionPositions = Array.from(sections).map( (section) => scrolledPortion  + section.getBoundingClientRect().top);
-            const position = sectionPositions.find((sectionPosition) =>{ return sectionPosition > scrolledPortion });
-            scrollBool ? window.scrollTo(0,0) :  window.scrollTo(0 , position);
-        } else {
-            scrollBool ? bigImgWrapper.scrollTo(0, 0) : bigImgWrapper.scrollTo(0, bigImgWrapper.scrollHeight);
-        }
-
-    };
-    // End of Progress Bar Click
+        scrollBool = scrolledPortion + pageViewportHeight  +  100 > pageHeight;
+       
     // Arrow Rotation
     if(scrollBool){
         progressBarCircle.style.transform = "rotate(180deg)";
@@ -133,7 +124,19 @@ window.addEventListener('load',function(){
     }
     // End of Arrow Rotation
     };
+    //Progress Bar Click
+    progressBar.addEventListener( 'click', (e) => {
+    e.preventDefault();
+    if(!bigImgWrapper){
+        const sectionPositions = Array.from(sections).map( (section) => scrolledPortion  + section.getBoundingClientRect().top);
+        const position = sectionPositions.find((sectionPosition) =>{ return sectionPosition > scrolledPortion });
+        scrollBool ? window.scrollTo(0,0) :  window.scrollTo(0 , position);
+    } else {
+        scrollBool ? bigImgWrapper.scrollTo(0, 0) : bigImgWrapper.scrollTo(0, bigImgWrapper.scrollHeight);
+    }
 
+});
+// End of Progress Bar Click
 
     progressBarFn();
     // End of Progress Bar
@@ -230,6 +233,10 @@ window.addEventListener('load',function(){
             demo.classList.remove('change');
             bigImgWrapper.remove();
             document.body.style.overflowY = "scroll";
+            this.document.addEventListener('scroll', scrollFn);
+
+
+
             progressBarFn();
             } ;
         });
