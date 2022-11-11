@@ -86,42 +86,72 @@ window.addEventListener('load',function(){
     const halfCircles = document.querySelectorAll('.half-circle'); 
     const halfCircleTop = document.querySelector('.half-circle-top');
     const progressBarCircle = document.querySelector('.progress-bar-circle');
-    const progressBarFn = () => {
+    const progressBarFn = (bigImgWrapper = false ) => {
+        let pageHeight = 0; 
+        let scrolledPortion = 0.
         const pageViewportHeight = window.innerHeight; //Сколько я вижу экрана
-        const scrolledPortion = window.pageYOffset;  //Сколько я пролистал сверху от сайта
-        const pageHeight = document.documentElement.scrollHeight; //Высота всего сайта 
+        if(!bigImgWrapper) {
+            pageHeight = document.documentElement.scrollHeight; //Высота всего сайта 
+            scrolledPortion = window.pageYOffset;  //Сколько я пролистал сверху от сайта
+        } else {
+            pageHeight = bigImgWrapper.firstElementChild.scrollHeight; //Высота всего сайта 
+            scrolledPortion = bigImgWrapper.scrollTop;  //Сколько я пролистал сверху от сайта
+        }
+
+
         const scrolledPortionDegree = (scrolledPortion / (pageHeight - pageViewportHeight) ) * 360;
         halfCircles.forEach(el => {
             el.style.transform = `rotate(${scrolledPortionDegree}deg)`;
-        });
-        if(scrolledPortionDegree >= 180){
-            halfCircles[0].style.transform = "rotate(180deg)";
-            halfCircleTop.style.opacity = "0";
-        } else {
-            halfCircleTop.style.opacity = "1";
-        }
-    };
 
-    //Progress Bar Click
-    progressBar.onclick = (e) => {
+            if(scrolledPortionDegree >= 180){
+                halfCircles[0].style.transform = "rotate(180deg)";
+                halfCircleTop.style.opacity = "0";
+            } else {
+                halfCircleTop.style.opacity = "1";
+            }
+
+        });
+        const scrollBool = scrolledPortion + pageViewportHeight  +  100 > pageHeight;
+        //Progress Bar Click
+        progressBar.onclick = (e) => {
         e.preventDefault();
-        const sectionPositions = Array.from(sections).map( section =>  scrolledPortion + section.getBoundingClientRect().top );
-        console.log(sectionPositions);
+        if(!bigImgWrapper){
+            const sectionPositions = Array.from(sections).map( (section) => scrolledPortion  + section.getBoundingClientRect().top);
+            const position = sectionPositions.find((sectionPosition) =>{ return sectionPosition > scrolledPortion });
+            scrollBool ? window.scrollTo(0,0) :  window.scrollTo(0 , position);
+        } else {
+            scrollBool ? bigImgWrapper.scrollTo(0, 0) : bigImgWrapper.scrollTo(0, bigImgWrapper.scrollHeight);
+        }
+
     };
     // End of Progress Bar Click
+    // Arrow Rotation
+    if(scrollBool){
+        progressBarCircle.style.transform = "rotate(180deg)";
+    } else {
+        progressBarCircle.style.transform = "rotate(0)";
+    }
+    // End of Arrow Rotation
+    };
+
+
+    progressBarFn();
     // End of Progress Bar
+
+
     // Navigation
     const menuIcon = document.querySelector('.menu-icon');
     const navbar = document.querySelector('.navbar');
-    document.addEventListener('scroll', () => {
+    const scrollFn = () => {
         menuIcon.classList.add('show-menu-icon');
         navbar.classList.add('hide-navbar');
-        if (this.window.scrollY === 0){
+        if (window.scrollY === 0){
             menuIcon.classList.remove('show-menu-icon');
             navbar.classList.remove('hide-navbar');
         }
         progressBarFn();
-    });
+    }
+    document.addEventListener('scroll', scrollFn);
     menuIcon.addEventListener('click', () =>{
         menuIcon.classList.remove('show-menu-icon');
         navbar.classList.remove('hide-navbar');
@@ -154,7 +184,7 @@ window.addEventListener('load',function(){
             project.firstElementChild.style.top = "2rem";
         });
 
-        //Big Project
+        //Big Project Image
         project.addEventListener('click',() =>{
             const bigImgWrapper = document.createElement("div");
             bigImgWrapper.className = "project-img-wrapper";
@@ -178,12 +208,21 @@ window.addEventListener('load',function(){
                 }
             };
            
-            
+           
             bigImg.setAttribute("src",`${imgPath}-big.jpg`);
             bigImgWrapper.appendChild(bigImg);
             document.body.style.overflowY = "hidden";
 
+            this.document.removeEventListener('scroll', scrollFn);
 
+
+            progressBarFn(bigImgWrapper);
+            bigImgWrapper.onscroll = () => {
+                progressBarFn(bigImgWrapper);
+            };
+            progressBarCircle.addEventListener('click', ()=>{
+                progressBarFn(bigImgWrapper);
+            });
             projectHideBtn.classList.add("change");
             demo.classList.add('change');
             projectHideBtn.onclick = () => { 
@@ -191,6 +230,7 @@ window.addEventListener('load',function(){
             demo.classList.remove('change');
             bigImgWrapper.remove();
             document.body.style.overflowY = "scroll";
+            progressBarFn();
             } ;
         });
         //End of //Big Project

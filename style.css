@@ -245,6 +245,7 @@ transition: transform 2s linear;
     color: #fff;
     font-size: 4rem;
     z-index: 200;
+    transition: transform 0.5s;
 }
 /* End of Progress Bar  */
 
@@ -564,6 +565,7 @@ transition: transform 2s linear;
     animation: imgWrapperAnim 1s forwards;
     overflow: hidden scroll;
     z-index: 9;
+    scroll-behavior: smooth;
 }
 @keyframes imgWrapperAnim{
     0%{
