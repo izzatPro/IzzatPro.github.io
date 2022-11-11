@@ -93,12 +93,12 @@ window.addEventListener('load',function(){
         imageWrapper = bigImgWrapper ;
         let pageHeight = 0; 
         const pageViewportHeight = window.innerHeight; //Сколько я вижу экрана
-        if(!bigImgWrapper) {
+        if(!imageWrapper) {
             pageHeight = document.documentElement.scrollHeight; //Высота всего сайта 
             scrolledPortion = window.pageYOffset;  //Сколько я пролистал сверху от сайта
         } else {
-            pageHeight = bigImgWrapper.firstElementChild.scrollHeight; //Высота всего сайта 
-            scrolledPortion = bigImgWrapper.scrollTop;  //Сколько я пролистал сверху от сайта
+            pageHeight = imageWrapper.firstElementChild.scrollHeight; //Высота всего сайта 
+            scrolledPortion = imageWrapper.scrollTop;  //Сколько я пролистал сверху от сайта
         }
 
 
@@ -127,12 +127,12 @@ window.addEventListener('load',function(){
     //Progress Bar Click
     progressBar.addEventListener( 'click', (e) => {
     e.preventDefault();
-    if(!bigImgWrapper){
+    if(!imageWrapper){
         const sectionPositions = Array.from(sections).map( (section) => scrolledPortion  + section.getBoundingClientRect().top);
         const position = sectionPositions.find((sectionPosition) =>{ return sectionPosition > scrolledPortion });
         scrollBool ? window.scrollTo(0,0) :  window.scrollTo(0 , position);
     } else {
-        scrollBool ? bigImgWrapper.scrollTo(0, 0) : bigImgWrapper.scrollTo(0, bigImgWrapper.scrollHeight);
+        scrollBool ? imageWrapper.scrollTo(0, 0) : imageWrapper.scrollTo(0, imageWrapper.scrollHeight);
     }
 
 });
