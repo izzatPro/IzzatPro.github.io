@@ -81,15 +81,16 @@ window.addEventListener('load',function(){
 
     // End of Main Button
     // Progress Bar
+    const sections = document.querySelectorAll('section');
+    const progressBar= document.querySelector('.progress-bar');
     const halfCircles = document.querySelectorAll('.half-circle'); 
     const halfCircleTop = document.querySelector('.half-circle-top');
     const progressBarCircle = document.querySelector('.progress-bar-circle');
     const progressBarFn = () => {
         const pageViewportHeight = window.innerHeight; //Сколько я вижу экрана
-        const pageHeight = this.document.documentElement.scrollHeight; //Высота всего сайта 
-        const scrolledPortion =this.window.pageYOffset;  //Сколько я пролистал сверху от сайта
+        const scrolledPortion = window.pageYOffset;  //Сколько я пролистал сверху от сайта
+        const pageHeight = document.documentElement.scrollHeight; //Высота всего сайта 
         const scrolledPortionDegree = (scrolledPortion / (pageHeight - pageViewportHeight) ) * 360;
-        console.log(scrolledPortionDegree);
         halfCircles.forEach(el => {
             el.style.transform = `rotate(${scrolledPortionDegree}deg)`;
         });
@@ -100,6 +101,14 @@ window.addEventListener('load',function(){
             halfCircleTop.style.opacity = "1";
         }
     };
+
+    //Progress Bar Click
+    progressBar.onclick = (e) => {
+        e.preventDefault();
+        const sectionPositions = Array.from(sections).map( section =>  scrolledPortion + section.getBoundingClientRect().top );
+        console.log(sectionPositions);
+    };
+    // End of Progress Bar Click
     // End of Progress Bar
     // Navigation
     const menuIcon = document.querySelector('.menu-icon');
