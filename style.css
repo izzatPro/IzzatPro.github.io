@@ -506,6 +506,7 @@ animation: mouseCircleAnim 10s infinite linear;
     object-fit: cover;
     position: absolute;
     top: 2rem;
+    pointer-events: none;
     transition: top 4s 0.2s, opacity 0.2s;
     opacity: 0.5;
 }
