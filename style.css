@@ -680,6 +680,7 @@ animation: mouseCircleAnim 10s infinite linear;
     position: absolute;
     right: 0;
     transition: right .5s;
+    pointer-events: none;
 }
 .service-text {
     font-size: 5rem;

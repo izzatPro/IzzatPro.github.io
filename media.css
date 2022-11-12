@@ -1,0 +1,119 @@
+/* Responsive */
+@media (max-width:1500px){
+ /*  Маленькие круглешки в хедере */
+ .circle{
+    width: 15rem;
+    height: 15rem;
+ }
+ /* Моя видимый круглешек в хедере */
+ .main-circle {
+    width: 45rem;
+    height: 45rem;
+ }
+ /* При наведении на мою фотографию картинка увеличивается */
+ .main-circle:hover {
+    width: 55rem;
+    height: 55rem ;
+ }
+ /* Моя фотография */
+ .main-circle img{
+    width: 247%;
+    height: 427%;
+ }
+ /* Обо мне слова, welcome */
+ .about-me-text span {
+    font-size: 11rem;
+ }
+ /* Отступ вниз от 4-той секции с андерлайнами */
+ .section-4{
+    margin-bottom: 10rem;
+ }
+ /* Уменьшаем шрифт кнопок и текста в андерлайнах */
+ .service-btn span{
+    font-size: 8rem;
+ }
+ .service-text {
+    font-size: 4rem;
+ }
+}
+
+
+@media(max-width: 1350px){
+    /* Главная кнопка */
+    .main-btn{
+        width: 12.5rem;
+        height: 12.5rem;
+    }
+    /* отвечает за все 4 круглешка в хедере */
+    .circle {
+        display: none;
+    }
+    /* Круглешок вниз, который отвечает за навигацию */
+    .progress-bar{
+        right: 1rem;
+        bottom: 0;
+    }
+    /* Текс обо мне welcome */
+    .about-me-text span{
+        font-size: 10rem;
+    }
+}
+
+@media(max-width: 1150px){
+    /* Меняет дефолтный рем у всех устройств */
+    html{
+        font-size: 55%;
+    }
+    /* Точка и круглешек у курсора */
+    /* Говорит мышки нет на этих устройствах */
+    .mouse-circle, .mouse-dot {
+        display: none;
+    }
+    /* home about etc, секции в нафигации */
+    .navbar-link{
+        margin: 0 2rem;
+    }
+    
+    /* Видимый круглешек картинки */
+    .main-circle{
+        width: 40rem;
+        height: 40rem;
+    }
+    .main-circle:hover{
+        width: 45rem;
+        height: 45rem;
+    }
+    /* Teкс обо мне , welcome */
+    .about-me-text span{
+        font-size: 7.5rem;
+    }
+    /* Когда нажимаем на проект, открывается большой проект с картинкой*/
+    .project-img{
+        padding: 7rem 11rem;
+    }
+    /* Кнопка close / demo */
+    .project-hide-btn, .demo{
+        right: 2rem;
+    }
+
+    /* АНдерлайн ссылка и нижний пробел вместе их общая высота */
+    .service-btn{
+        height: 12rem;
+    }
+    /* Андерлайн ссылка на контент */
+    .service-btn span{
+        font-size: 8rem;
+    }
+    /* Андерлайн текcт контента внутри */
+    .service-text{
+        font-size: 3.5rem;
+    }
+    /* Cлайдер */
+    .slideshow{
+        margin: 5rem 0;
+    }
+}
+
+
+
+/* End of Responsive */
