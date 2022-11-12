@@ -197,14 +197,15 @@ animation: mouseCircleAnim 10s infinite linear;
 /* Progress Bar */
 .progress-bar {
     position: fixed;
-    bottom: 8rem;
-    right: 8rem;
+    bottom: 4rem;
+    right: 4rem;
     width: 8rem;
     height: 8rem;
     background: white;
     border-radius: 50% ;
     z-index: 200;
     overflow: hidden;
+    transform: translate(-50% , -50%);
 }
 .half-circle, .half-circle-top{
     position: absolute;
@@ -213,6 +214,7 @@ animation: mouseCircleAnim 10s infinite linear;
     top: 0;
     left: 0;
     transform-origin: right center ;
+    pointer-events: none;
 }
 .half-circle:nth-child(1){
     background: #b60000;
@@ -223,19 +225,6 @@ animation: mouseCircleAnim 10s infinite linear;
 .half-circle-top{
     background: white;
 }
-/* .progress-bar:hover .half-circle-top{
-    opacity: 0;
-    transition: opacity 0s 1s;
-}
-.progress-bar:hover .half-circle:nth-child(1){
-transform: rotate(180deg);
-transition: transform 1s linear;
-}
-.progress-bar:hover .half-circle:nth-child(2){
-transform: rotate(360deg);
-transition: transform 2s linear;
-} */
-
 
 .progress-bar-circle {
     width: 7.8rem;
@@ -246,6 +235,7 @@ transition: transform 2s linear;
     font-size: 4rem;
     z-index: 200;
     transition: transform 0.5s;
+    pointer-events: none;
 }
 /* End of Progress Bar  */
 
@@ -255,14 +245,15 @@ transition: transform 2s linear;
 /* Menu Icon */
 .menu-icon {
     position: fixed;
-    top: 0;
-    right: 6rem;
+    top: 3.5rem;
+    right: 0rem;
     width: 12rem;
     height: 7rem;
     flex-direction: column;
     opacity: 0;
     visibility: hidden;
     transition: opacity 0.2s ;
+    transform: translate(-50%, -50%);
     z-index: 8;
     cursor: pointer;
 }
