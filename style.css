@@ -566,6 +566,7 @@ transition: transform 2s linear;
     overflow: hidden scroll;
     z-index: 9;
     scroll-behavior: smooth;
+
 }
 @keyframes imgWrapperAnim{
     0%{
@@ -582,6 +583,7 @@ transition: transform 2s linear;
     opacity: .9;
     transform-origin: top center;
     animation: imgAnim 1s 1s both;
+    display: block;
 }
 @keyframes imgAnim {
     0% {

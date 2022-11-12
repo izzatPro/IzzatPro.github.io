@@ -86,6 +86,7 @@ window.addEventListener('load',function(){
     const halfCircles = document.querySelectorAll('.half-circle'); 
     const halfCircleTop = document.querySelector('.half-circle-top');
     const progressBarCircle = document.querySelector('.progress-bar-circle');
+
     let scrolledPortion = 0;
     let scrollBool = false ;
     let imageWrapper = false ; 
@@ -93,6 +94,7 @@ window.addEventListener('load',function(){
         imageWrapper = bigImgWrapper ;
         let pageHeight = 0; 
         const pageViewportHeight = window.innerHeight; //Сколько я вижу экрана
+
         if(!imageWrapper) {
             pageHeight = document.documentElement.scrollHeight; //Высота всего сайта 
             scrolledPortion = window.pageYOffset;  //Сколько я пролистал сверху от сайта
@@ -114,7 +116,19 @@ window.addEventListener('load',function(){
             }
 
         });
-        scrollBool = scrolledPortion + pageViewportHeight  +  100 > pageHeight;
+        //Исправил баг с навбаром 
+        if (bigImgWrapper){
+            if (scrolledPortion > 1100){
+                scrollBool = true;
+            } else {
+                scrollBool = false;
+            }        
+        } else { 
+            scrollBool = scrolledPortion + pageViewportHeight == pageHeight;
+        };
+
+        // scrollBool = scrolledPortion + pageViewportHeight == pageHeight;
+        // console.log(scrollBool);
        
     // Arrow Rotation
     if(scrollBool){
@@ -153,8 +167,9 @@ window.addEventListener('load',function(){
             navbar.classList.remove('hide-navbar');
         }
         progressBarFn();
-    }
+    };
     document.addEventListener('scroll', scrollFn);
+
     menuIcon.addEventListener('click', () =>{
         menuIcon.classList.remove('show-menu-icon');
         navbar.classList.remove('hide-navbar');
@@ -211,21 +226,15 @@ window.addEventListener('load',function(){
                 }
             };
            
-           
             bigImg.setAttribute("src",`${imgPath}-big.jpg`);
             bigImgWrapper.appendChild(bigImg);
             document.body.style.overflowY = "hidden";
 
-            this.document.removeEventListener('scroll', scrollFn);
-
-
+            document.removeEventListener('scroll', scrollFn);
             progressBarFn(bigImgWrapper);
             bigImgWrapper.onscroll = () => {
                 progressBarFn(bigImgWrapper);
             };
-            progressBarCircle.addEventListener('click', ()=>{
-                progressBarFn(bigImgWrapper);
-            });
             projectHideBtn.classList.add("change");
             demo.classList.add('change');
             projectHideBtn.onclick = () => { 
@@ -233,10 +242,9 @@ window.addEventListener('load',function(){
             demo.classList.remove('change');
             bigImgWrapper.remove();
             document.body.style.overflowY = "scroll";
-            this.document.addEventListener('scroll', scrollFn);
 
 
-
+            document.addEventListener('scroll', scrollFn);
             progressBarFn();
             } ;
         });
@@ -260,7 +268,6 @@ window.addEventListener('load',function(){
         }, 600);
         setTimeout(()=>{
             project.style.opacity = "1";
-            console.log(i*200);
         }, i * 200);
     };
 
