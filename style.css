@@ -386,7 +386,7 @@ animation: mouseCircleAnim 10s infinite linear;
     border-radius: 50%;
     transition: width 1s, height 1s;
 }
-.main-circle:hover{
+.main-circle-hover:hover{
     width: 65rem;
     height: 65rem;
 }
