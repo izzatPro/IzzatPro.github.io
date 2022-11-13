@@ -155,13 +155,69 @@
     }
 }
 @media (max-width:700px){
+    /* Меняет текст везде где задано в рем */
     html{
-        font-size: 40%;
+        font-size: 45%;
     }
+    /* Все инпуты в форме, уменьшает ширину */
     .contact-form-input{
         width: 50rem;
     }
 }
+@media (max-width: 550px){
+    html{
+        font-size: 40%;
+    }
+    /* Мое фото */
+    .main-circle img{
+        width: 333%;
+        height: 668% ;
+    }
+    .service-btn span{
+        font-size: 4.5rem;
+    }
+    .service-text{
+        font-size: 3rem;
+        /* color: #bbb; */
+    }
+    .contact-form-input {
+        width: 40rem;
+    }
+    .slideshow {
+        width: 45rem;
+    }
+    .slidershow-link img{
+        padding: 0 1.1rem;
+    }
+}
+@media (max-width: 400px){
+    html{
+        font-size: 35%;
+    }
+    .logo{
+        font-size: 1.7rem;
+        top: 13rem;
+        left: 50%;
+        transform: translateX(-50%);
+    }
+    .navbar{
+        justify-content: center;
+        padding: 0;
+    }
+    /* Круглешек в который помещена наша фото */
+    .main-circle {
+        width: 38rem;
+    }
+    /* Наше фото */
+    .main-circle img{
+        width: 365%;
+        height: 745%;
+    }
+    /* Надпись когда мы кликаем на инпуты */
+    .form-heading{
+        font-size: 5rem;
+    }
 
+}
 
 /* End of Responsive */
