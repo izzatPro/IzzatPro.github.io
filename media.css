@@ -1,5 +1,15 @@
 /* Responsive */
-@media (max-width:1500px){
+@media (max-width: 1800px){
+    .section-heading{
+        left: 4rem ;
+     }
+}
+@media (min-width: 1500px) and (max-width: 1750px){
+    .project{
+        width: 33rem;
+    }
+}
+@media (max-width:1499.99px){
  /*  Маленькие круглешки в хедере */
  .circle{
     width: 15rem;
@@ -35,6 +45,13 @@
  .service-text {
     font-size: 4rem;
  }
+ .featured-text-1{
+    margin-left: 4.5rem ;
+ }
+ .featured-text-2{
+    margin-right: 5.5rem ;
+ }
+
 }
 
 
