@@ -8,22 +8,23 @@
     .project{
         width: 33rem;
     }
+
 }
 @media (max-width:1499.99px){
  /*  Маленькие круглешки в хедере */
  .circle{
-    width: 15rem;
-    height: 15rem;
+    width: 13rem;
+    height: 13rem;
  }
  /* Моя видимый круглешек в хедере */
  .main-circle {
-    width: 45rem;
-    height: 45rem;
+    width: 40rem;
+    height: 40rem;
  }
  /* При наведении на мою фотографию картинка увеличивается */
  .main-circle-hover:hover {
-    width: 55rem;
-    height: 55rem ;
+    width: 45rem;
+    height: 45rem ;
  }
  /* Моя фотография */
  .main-circle img{
@@ -130,7 +131,11 @@
         margin: 5rem 0;
     }
 }
-
+@media (min-width: 993px) and (max-width:1200px){
+    .pos{
+        bottom: -15px;
+    }
+}
 @media (max-width: 900px){
     /* иконка меню */
     .menu-icon{

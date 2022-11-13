@@ -586,7 +586,7 @@ window.addEventListener('load',function(){
                 scrollBool = false;
             }        
         } else { 
-            scrollBool = scrolledPortion + pageViewportHeight == pageHeight;
+            scrollBool = scrolledPortion + pageViewportHeight + 50 > pageHeight;
         };
 
         // scrollBool = scrolledPortion + pageViewportHeight == pageHeight;
