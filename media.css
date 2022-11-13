@@ -114,6 +114,54 @@
     }
 }
 
+@media (max-width: 900px){
+    /* иконка меню */
+    .menu-icon{
+        right: -4rem;
+    }
+    /*  ячейки ссылок home,about*/
+    .navbar-link{
+        font-size: 1.5rem;
+        margin: 0 1rem;
+    }
+    /* В хедере у нас есть две надписи хедера strong junior*/
+    .featured-text-1{
+        margin: 0 auto 0 5rem;
+    }
+    .featured-text-2{
+        margin: 0 5rem 0 auto;
+    }
+    /* Все остальные надписи имеют этот класс тк они по одной стороне */
+    .section-heading{
+        left: 5rem;
+    }
+    /* Текст обо мне, welcome, который появляется автоматически */
+    /* Он добавляет другой цвет, чтобы он был ярче на телефонах, мы цвет меняли */
+    .about-me-text span {
+        font-size: 5.5rem;
+        /* color: #ccc; */
+    }
+    /* АНдерлайн ссылка и нижний пробел вместе их общая высота */
+    .service-btn{
+        height: 9rem;
+    }
+     /* Андерлайн ссылка на контент */
+    .service-btn span{
+        font-size: 6rem;
+    }
+      /* Андерлайн текcт контента внутри */
+    .service-text{
+        font-size: 3.2rem;
+    }
+}
+@media (max-width:700px){
+    html{
+        font-size: 40%;
+    }
+    .contact-form-input{
+        width: 50rem;
+    }
+}
 
 
 /* End of Responsive */
