@@ -293,6 +293,9 @@ animation: mouseCircleAnim 10s infinite linear;
     opacity: 1;
     visibility: visable;
 }
+.cv{
+    color:#83f600;
+}
 .hide-navbar {
     opacity: 0;
     visibility: hidden;
