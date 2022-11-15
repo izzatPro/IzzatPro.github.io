@@ -130,6 +130,10 @@
     .slideshow{
         margin: 5rem 0;
     }
+    .main-circle img{
+        top: -275px;
+        left: -200px;
+    }
 }
 @media (min-width: 993px) and (max-width:1200px){
     .pos{
@@ -195,15 +199,25 @@
         font-size: 1.3rem;
         margin: 0 0.5rem;
     }
+    .main-circle img{
+        top: -225px;
+        left: -173px;
+    }
 }
+
 @media (max-width: 550px){
     html{
         font-size: 40%;
     }
     /* Мое фото */
-    .main-circle img{
+    /* .main-circle img{
         width: 333%;
         height: 668% ;
+
+    } */
+    .main-circle img{
+        top: -204px;
+        left: -152px;
     }
     .service-btn span{
         font-size: 4.5rem;
@@ -224,6 +238,15 @@
     .logo{
         font-size: 4.5rem;
     }
+    /* .main-circle{
+        overflow: visible;
+    }
+    .phone_photo {
+       width: 300px !important;
+       height: 300px !important;
+       position: absolute !important;
+       z-index: 9999999999 !important;
+    } */
 }
 @media (max-width: 400px){
     html{
@@ -245,14 +268,19 @@
     }
     /* Наше фото */
     .main-circle img{
-        width: 365%;
-        height: 745%;
+        top: -175px ;
+        left: -127px ;
     }
     /* Надпись когда мы кликаем на инпуты */
     .form-heading{
         font-size: 5rem;
     }
 
+}
+@media (min-width: 400px){
+    .logo{
+        font-size: 2rem;
+    }
 }
 
 /* End of Responsive */
