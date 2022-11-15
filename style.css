@@ -771,6 +771,12 @@ textarea::placeholder {
     margin: 0 auto 1rem 0;
     visibility: hidden;
     opacity: 0;
+    transition: opacity .3s;
+}
+
+.error.message{
+    visibility: visible;
+    opacity: 1;
 }
 /* End of Form validation */
 /* End of Form */

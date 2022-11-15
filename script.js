@@ -392,6 +392,57 @@ window.addEventListener('load',function(){
 
     }, 3000);
     // End of Slideshow
+
+     // Form validation
+     const form = document.querySelector('.contact-form');
+     const username = this.document.getElementById("name");
+     const email = this.document.getElementById('email');
+     const subject = this.document.getElementById('subject');
+     const message = this.document.getElementById("message");
+     const messages = this.document.querySelectorAll('.message');
+     // Function to the error message
+     const error = (input, message) => {
+         input.nextElementSibling.classList.add('error');
+         input.nextElementSibling.textContent = message;
+     };
+     const success = (input) => {
+         input.nextElementSibling.classList.remove('error');
+     };
+     //Function to check empty fields   
+     const checkRequiredFields = (inputArr) => {
+         inputArr.forEach( input => {
+             if(input.value.trim() === ""){
+                 error(input, `${input.id} is required`);
+             } 
+         });
+     };
+     // Function length of the fields 
+     const checkLength = (input, min) => {
+         if(input.value.trim().length < min){
+             error(input, `${input.id} must be at least ${min} characters`);
+         } else {success(input)};
+     };
+     // Function to check the truth of email
+     const checkEmail = (input) =>{
+         const regEx =  /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+         if(regEx.test(input.value.trim())){
+             success(input);
+         } else {
+             error(input, "Email is not valid");
+         }
+     };
+ 
+ 
+     form.addEventListener('submit',(e) =>{
+         e.preventDefault();
+         checkLength(username, 5);
+         checkLength(subject, 5);
+         checkLength(message, 20);
+         checkEmail(email);
+         checkRequiredFields([username,email,subject,message]);
+         
+     });
+     // End of Form Validation
     // End of Section 5
     } 
     
@@ -835,16 +886,48 @@ window.addEventListener('load',function(){
     const subject = this.document.getElementById('subject');
     const message = this.document.getElementById("message");
     const messages = this.document.querySelectorAll('.message');
+    // Function to the error message
     const error = (input, message) => {
-        
-    }
+        input.nextElementSibling.classList.add('error');
+        input.nextElementSibling.textContent = message;
+    };
+    const success = (input) => {
+        input.nextElementSibling.classList.remove('error');
+    };
+    //Function to check empty fields   
     const checkRequiredFields = (inputArr) => {
         inputArr.forEach( input => {
             if(input.value.trim() === ""){
-
-            }
+                error(input, `${input.id} is required`);
+            } 
         });
     };
+    // Function length of the fields 
+    const checkLength = (input, min) => {
+        if(input.value.trim().length < min){
+            error(input, `${input.id} must be at least ${min} characters`);
+        } else {success(input)};
+    };
+    // Function to check the truth of email
+    const checkEmail = (input) =>{
+        const regEx =  /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+        if(regEx.test(input.value.trim())){
+            success(input);
+        } else {
+            error(input, "Email is not valid");
+        }
+    };
+
+
+    form.addEventListener('submit',(e) =>{
+        e.preventDefault();
+        checkLength(username, 5);
+        checkLength(subject, 5);
+        checkLength(message, 20);
+        checkEmail(email.value);
+        checkRequiredFields([username,email,subject,message]);
+        
+    });
     // End of Form Validation
     // End of Section 5
     }
