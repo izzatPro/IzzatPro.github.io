@@ -760,6 +760,19 @@ textarea::placeholder {
     font-size: 1.8rem;
     color: #fff;
 }
+/* Form validation */
+.message{
+    font-size: 1.2rem;
+    font-weight: 700;
+    color: #83f600;
+    text-shadow: 1px 1px 2px red, 0 0 1em blue, 0 0 0.2em blue;
+    text-transform: uppercase;
+    letter-spacing: 0.1rem;
+    margin: 0 auto 1rem 0;
+    visibility: hidden;
+    opacity: 0;
+}
+/* End of Form validation */
 /* End of Form */
 /* Slideshow */
 .slideshow{
@@ -792,4 +805,5 @@ transition: width 0.5s , opacity 0.5s;
     filter: brightness(1.5);
 }
 /* End of Slideshow */
+
 /* End of Section 5 */

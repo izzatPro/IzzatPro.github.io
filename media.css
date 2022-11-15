@@ -238,15 +238,9 @@
     .logo{
         font-size: 4.5rem;
     }
-    /* .main-circle{
-        overflow: visible;
+    .page-bg{
+            background: linear-gradient(rgba(0, 0, 0, .1),rgba(0,0,0,.9)), url(https://cdn2.vectorstock.com/i/1000x1000/73/51/creative-background-vector-787351.jpg) center no-repeat ;
     }
-    .phone_photo {
-       width: 300px !important;
-       height: 300px !important;
-       position: absolute !important;
-       z-index: 9999999999 !important;
-    } */
 }
 @media (max-width: 400px){
     html{
