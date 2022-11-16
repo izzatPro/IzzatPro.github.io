@@ -240,14 +240,16 @@
         <!-- Form -->
         <div class="form-wrapper">
           <h2 class="form-heading">Let's Talk</h2>
-          <form action="" class="contact-form center">
-            <input type="text" class="contact-form-input pointer-enter" placeholder="Name" id="name" autocomplete="off">
-                <p class="message">Error message</p>
-            <input type="text" class="contact-form-input pointer-enter" placeholder="Email" id="email" autocomplete="off">
-                <p class="message">Error message</p>
-            <input type="text" class="contact-form-input pointer-enter" placeholder="Subject" id="subject" autocomplete="off">
-                <p class="message">Error message</p>
-            <textarea name="" id="message" class="contact-form-input contact-form-textarea pointer-enter" placeholder="Message" autocomplete="off"></textarea>
+          <form action="" class="contact-form center" action="POST" data-netlify = "true">
+            <input type="text" class="contact-form-input pointer-enter" placeholder="Name" id="name" autocomplete="off" name="name">
+                <p class="message"></p>
+            <input type="text" class="contact-form-input pointer-enter" placeholder="Email" id="email" autocomplete="off"  name="email">
+                <p class="message "></p>
+            <input type="text" class="contact-form-input pointer-enter" placeholder="Subject" id="subject" autocomplete="off" name="subject">
+                <p class="message"></p>
+            <textarea name="message" id="message" class="contact-form-input contact-form-textarea pointer-enter" placeholder="Message" autocomplete="off"
+            name="message"
+            ></textarea>
                 <p class="message">Error message</p>            
             <input type="submit" class="form-submit-btn pointer-enter" value="Send Request">
           </form>

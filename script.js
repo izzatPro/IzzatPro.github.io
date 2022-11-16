@@ -434,13 +434,14 @@ window.addEventListener('load',function(){
  
  
      form.addEventListener('submit',(e) =>{
-         e.preventDefault();
          checkLength(username, 5);
          checkLength(subject, 5);
          checkLength(message, 20);
          checkEmail(email);
          checkRequiredFields([username,email,subject,message]);
          
+         const notValid = Array.from(messages).find((message) =>{ return message.classList.contains('error')});
+         notValid && e.preventDefault();
      });
      // End of Form Validation
     // End of Section 5
@@ -884,7 +885,7 @@ window.addEventListener('load',function(){
     const username = this.document.getElementById("name");
     const email = this.document.getElementById('email');
     const subject = this.document.getElementById('subject');
-    const message = this.document.getElementById("message");
+    const message = this.document.getElementById("message"); 
     const messages = this.document.querySelectorAll('.message');
     // Function to the error message
     const error = (input, message) => {
@@ -906,7 +907,7 @@ window.addEventListener('load',function(){
     const checkLength = (input, min) => {
         if(input.value.trim().length < min){
             error(input, `${input.id} must be at least ${min} characters`);
-        } else {success(input)};
+        } else {success(input) };
     };
     // Function to check the truth of email
     const checkEmail = (input) =>{
@@ -917,16 +918,16 @@ window.addEventListener('load',function(){
             error(input, "Email is not valid");
         }
     };
-
+   
 
     form.addEventListener('submit',(e) =>{
-        e.preventDefault();
         checkLength(username, 5);
         checkLength(subject, 5);
         checkLength(message, 20);
-        checkEmail(email.value);
+        checkEmail(email);
         checkRequiredFields([username,email,subject,message]);
-        
+        const notValid = Array.from(messages).find((message) =>{return message.classList.contains('error')});
+        notValid && e.preventDefault();
     });
     // End of Form Validation
     // End of Section 5
