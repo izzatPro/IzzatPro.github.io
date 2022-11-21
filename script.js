@@ -1,4 +1,5 @@
 window.addEventListener('load',function(){
+
     if (window.matchMedia("(max-width: 1000px)").matches){
     // Circle hover
         const hoverCircle = document.querySelector('.main-circle-hover');
@@ -236,10 +237,12 @@ window.addEventListener('load',function(){
             const bigImg =  document.createElement("img");
             bigImg.className = "project-img";
             const imgPath = project.firstElementChild.getAttribute("src").split('.')[0];
+    
             demo.onclick = function(){
                 const demoDescr = project.firstElementChild.getAttribute("descr");
+                
                 switch(demoDescr){
-                    case 'phone': demo.setAttribute("href", "#"); break;
+                    case 'phone': demo.setAttribute("href", "https://ibiza-create.netlify.app/"); break;
                     case 'consulting': demo.setAttribute("href", "#"); break;
                     case 'cars': demo.setAttribute("href", "#"); break;
                     case 'design': demo.setAttribute("href", "#"); break;
@@ -727,7 +730,7 @@ window.addEventListener('load',function(){
             demo.onclick = function(){
                 const demoDescr = project.firstElementChild.getAttribute("descr");
                 switch(demoDescr){
-                    case 'phone': demo.setAttribute("href", "#"); break;
+                    case 'phone': demo.setAttribute("href", "https://ibiza-create.netlify.app/"); break;
                     case 'consulting': demo.setAttribute("href", "#"); break;
                     case 'cars': demo.setAttribute("href", "#"); break;
                     case 'design': demo.setAttribute("href", "#"); break;
