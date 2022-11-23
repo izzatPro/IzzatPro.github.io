@@ -220,7 +220,7 @@
         left: -152px;
     }
     .service-btn span{
-        font-size: 4.5rem;
+        font-size: 3.5rem;
     }
     .service-text{
         font-size: 3rem;
@@ -240,6 +240,9 @@
     }
     .page-bg{
             background: linear-gradient(rgba(0, 0, 0, .1),rgba(0,0,0,.9)), url(https://cdn2.vectorstock.com/i/1000x1000/73/51/creative-background-vector-787351.jpg) center no-repeat ;
+    }
+    .service-btn {
+        height: 7rem;
     }
 }
 @media (max-width: 400px){
