@@ -179,6 +179,9 @@
     .service-text{
         font-size: 3.2rem;
     }
+    .progress-bar{
+        display: none;
+    }
 }
 @media (min-width: 880px) and (max-width:950px){
     .project{
@@ -242,7 +245,10 @@
             background: linear-gradient(rgba(0, 0, 0, .1),rgba(0,0,0,.9)), url(https://cdn2.vectorstock.com/i/1000x1000/73/51/creative-background-vector-787351.jpg) center no-repeat ;
     }
     .service-btn {
-        height: 7rem;
+        height: 9rem;
+    }
+    .section-heading {
+        line-height: 6rem;
     }
 }
 @media (max-width: 400px){
@@ -294,6 +300,9 @@
     }
     .navbar-link:last-child{
         margin-right: 35px;
+    }
+    .section-heading {
+        line-height: 4rem;
     }
 }
 
