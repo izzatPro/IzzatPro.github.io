@@ -151,10 +151,10 @@ window.addEventListener('load',function(){
                 scrollBool = false;
             }        
         } else { 
-            scrollBool = scrolledPortion + pageViewportHeight + 40 > pageHeight;
-        };
+            scrollBool = scrolledPortion + pageViewportHeight == pageHeight;
+        }
 
-        // scrollBool = scrolledPortion + pageViewportHeight == pageHeight;
+        scrollBool = scrolledPortion + pageViewportHeight == pageHeight;
         // console.log(scrollBool);
        
     // Arrow Rotation
@@ -243,7 +243,7 @@ window.addEventListener('load',function(){
                 
                 switch(demoDescr){
                     case 'phone': demo.setAttribute("href", "https://ibiza-create.netlify.app/"); break;
-                    case 'consulting': demo.setAttribute("href", "#"); break;
+                    case 'consulting': demo.setAttribute("href", "https://sportpit.netlify.app/"); break;
                     case 'cars': demo.setAttribute("href", "#"); break;
                     case 'design': demo.setAttribute("href", "#"); break;
                     case 'food': demo.setAttribute("href", "#"); break;
@@ -641,10 +641,10 @@ window.addEventListener('load',function(){
                 scrollBool = false;
             }        
         } else { 
-            scrollBool = scrolledPortion + pageViewportHeight + 50 > pageHeight;
-        };
+            scrollBool = scrolledPortion + pageViewportHeight ==  pageHeight;
+        }
 
-        // scrollBool = scrolledPortion + pageViewportHeight == pageHeight;
+        scrollBool = scrolledPortion + pageViewportHeight == pageHeight;
         // console.log(scrollBool);
        
     // Arrow Rotation
@@ -731,7 +731,7 @@ window.addEventListener('load',function(){
                 const demoDescr = project.firstElementChild.getAttribute("descr");
                 switch(demoDescr){
                     case 'phone': demo.setAttribute("href", "https://ibiza-create.netlify.app/"); break;
-                    case 'consulting': demo.setAttribute("href", "#"); break;
+                    case 'consulting': demo.setAttribute("href", "https://sportpit.netlify.app/"); break;
                     case 'cars': demo.setAttribute("href", "#"); break;
                     case 'design': demo.setAttribute("href", "#"); break;
                     case 'food': demo.setAttribute("href", "#"); break;
